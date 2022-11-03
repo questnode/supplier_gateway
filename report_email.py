@@ -35,14 +35,14 @@ def send(message):
   mail_server.quit()
 
 
-def main():
+def main(argv):
   sender = "automation@example.com"
   recipient = "{}@example.com".format(os.environ.get('USER'))
   subject = "Upload Completed - Online Fruit Store"
   body = "All fruits are uploaded to our website successfully. A detailed list is attached to this email."
   attachment_path = "/tmp/processed.pdf"
 
-  message = generate(sender, receiver, subject, body, attachment_path)
+  message = generate(sender, recipient, subject, body, attachment_path)
   send(message)
 
 
